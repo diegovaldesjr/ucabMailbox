@@ -1,0 +1,26 @@
+doctype html
+html(lang="es")
+  head
+    title UCAB Mailbox
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css")
+    link(rel="stylesheet" href="css/main.css")
+    link(rel="stylesheet" href="css/animate.css")
+    link(href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css')
+    link(href='https://fonts.googleapis.com/css?family=Lato:400,700,300italic' rel='stylesheet' type='text/css')
+  body(class="fondo")
+    section(class="full-height text-center")
+      div(class="col-md-3 center-block quitar-float text-center espacio-arriba")
+        img(src="imgs/LogoUCAB.png" class="caja-fondo animated fadeIn")
+        div(class="caja-fondo espacio-arriba animated fadeIn retraso-1")
+          h1(class="mediano lato") Login
+          div(class="animated fadeInUp retraso-2")
+            form(method="post" action="/login" style="margin-top:1.5em;")
+              div(class="form-group")
+                  input(type="text" name="username" placeholder="Username" class="form-control")
+              div(class="form-group")
+                input(type="password" name="password" placeholder="Contraseña" class="form-control")
+              div(class="form-group text-right")
+                input(type="submit" class="btn btn-info" value="Login")
+            a(href="/registro") ¿No tienes cuenta? Registrate.

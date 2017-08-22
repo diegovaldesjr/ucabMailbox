@@ -1,0 +1,16 @@
+extends ../layout_admin.jade
+block contenido
+	h1(class="azul text-center espacio-arriba") Panel de administracion
+	section(class="full-height text-center espacio-arriba")
+		div(class="col-md-3 col-sm-3 col-xs inline-block")
+			a(href="/admin/bandeja")
+				img(src="imgs/bandeja.png" class="col-md-4 col-xs-6 quitar-float")
+				p(style="margin-top:1em;") Bandeja de entrada
+		div(class="col-md-3 col-sm-3 col-xs inline-block")
+			a(href="/admin/encuestas")
+				img(src="imgs/encuestas.png" class="col-md-4 col-xs-6 quitar-float")
+				p(style="margin-top:1em;") Encuestas
+		div(class="col-md-3 col-sm-3 col-xs inline-block")
+			a(href="/admin/usuarios")
+				img(src="imgs/users.png" class="col-md-4 col-xs-6 quitar-float")
+				p(style="margin-top:1em;") Usuarios

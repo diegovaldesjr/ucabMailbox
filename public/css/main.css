@@ -1,0 +1,118 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html,body{
+	height: 100%;
+	font-family: 'Lato', sans-serif;
+}
+
+img{
+	max-width: 100%;
+}
+
+.quitar-float{
+	float: none !important;
+}
+
+.espacio-arriba{
+	margin-top: 100px;
+}
+
+.pacifico{
+	font-family: 'Pacifico', cursive;
+}
+
+.lato{
+	font-family: 'Lato', sans-serif;
+}
+
+.grande{
+	font-size: 4em;
+}
+
+.pequeno{
+	font-size: 12px;
+}
+
+.verde{
+	color: #00887C;
+}
+
+.espacio-derecha{
+	margin-right: 1em;
+}
+
+.no-lista{
+	margin: 0px;
+	padding: 0px;
+}
+
+.no-lista li{
+	list-style-type: none;
+}
+
+.gris{
+	background-color: #eee;
+}
+
+.padding-largo{
+	padding: 5px 10px;
+}
+
+.inline-block{
+	float: none;
+	display: inline-block;
+	margin-right: -4px;
+}
+
+.vete-arriba{
+	vertical-align: top;
+}
+
+.mediano{
+	font-size: 1.5em;
+}
+
+a, a:hover, .azul{
+	color: #009FFF;
+	text-decoration: none;
+}
+
+.retraso-1{
+	-webkit- animation-delay: 1s;
+	-moz- animation-delay: 1s;
+	animation-delay: 1s;
+}
+
+.retraso-2{
+	-webkit- animation-delay: 2s;
+	-moz- animation-delay: 2s;
+	animation-delay: 2s;
+}
+
+.full-height{
+	height: 100%;
+}
+
+.caja-fondo{
+	border-radius: 33px 33px 33px 33px;
+	-moz-border-radius: 33px 33px 33px 33px;
+	-webkit-border-radius: 33px 33px 33px 33px;
+	borde: 0px solid #000000;
+	background-color: rgba(224,224,224,0.9);
+	padding: 1em;
+}
+
+.fondo{
+	background-image: url(../imgs/ucab.jpeg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	background-color: rgba(0,0,0,0.5);
+}
+
+ul{
+  list-style: none;
+}

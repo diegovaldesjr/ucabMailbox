@@ -1,0 +1,18 @@
+extends ../layout_user.jade
+block contenido
+	each publicacion in publicaciones
+		div(class="center-block text-center espacio-arriba")
+			div(class="container-fluid text-left")
+				label(class="caja-fondo" style="margin-left: 2em;")= publicacion._usuario.username
+				p(class="azul" style="margin-top: 0.5em; margin-left:3em") #{publicacion._estado.titulo} #[img(src="#{publicacion._estado.imageURL}" height="20em" width="20em")]
+			div(class="container-fluid")
+				img(src="#{publicacion.fotoURL}" height="350em" width="500em")
+			div(class="container-fluid")
+				p(class="mediano") #{publicacion._estado.preguntas.p1}
+				p= publicacion.respuestas.r1
+
+				p(class="mediano" style="margin-top: 2em;") #{publicacion._estado.preguntas.p2}
+				p= publicacion.respuestas.r2
+
+				p(class="mediano" style="margin-top: 2em;") #{publicacion._estado.preguntas.p3}
+				p= publicacion.respuestas.r3

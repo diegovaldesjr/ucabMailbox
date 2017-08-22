@@ -1,0 +1,10 @@
+extends ../layout_admin.jade
+block contenido
+	div(class="col-md-5 center-block quitar-float espacio-arriba text-left")
+		h1 Eliminar #[small= mood.titulo]
+		form(method="post" action="/admin/delete/#{mood.id}?_method=delete" style="margin-top:1.5em;")
+			div(class="form-group")
+				label Contraseña
+				input(type="password" name="password" placeholder="Contraseña" class="form-control")
+			div(class="form-group text-right")
+				input(type="submit" class="btn btn-info" value="Aceptar")

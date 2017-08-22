@@ -1,0 +1,37 @@
+extends ../layout_admin.jade
+block contenido
+	h2(class="azul text-center espacio-arriba" style="margin-bottom: 1em") Panel de administracion de usuarios
+	table(id="tabla" class="table")
+		caption 
+			span(class="col-md-3" style="float: left") Usuarios registrados
+			input(id="buscar" type="text" class="form-control" style="width: 20%; margin-right: 2.5em; float:right" placeholder="Escriba algo para filtrar")
+		thead
+			tr
+				th #
+				th Username
+				th Nombre
+				th Correo
+				th Acciones
+		tbody
+			each usuario in usuarios
+				tr
+					td= usuario.id
+					td= usuario.username
+					td #{usuario.apellido + " " + usuario.nombre}
+					td= usuario.email
+					td 
+						a(href="/admin/deleteuser/#{usuario.id}") Eliminar
+	script.
+		var busqueda = document.getElementById('buscar');
+		var table = document.getElementById("tabla").tBodies[0];
+		buscaTabla = function(){
+			texto = busqueda.value.toLowerCase();
+			var r=0;
+			while(row = table.rows[r++]){
+				if ( row.innerText.toLowerCase().indexOf(texto) !== -1 )
+					row.style.display = null;
+				else
+					row.style.display = 'none';
+				}
+		}
+		busqueda.addEventListener('keyup', buscaTabla);

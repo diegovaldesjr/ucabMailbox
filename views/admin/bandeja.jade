@@ -1,0 +1,34 @@
+extends ../layout_admin.jade
+block contenido
+	h2(class="azul espacio-arriba" style="margin-left: 1.5em;") Bandeja de entrada
+	table(id="tabla" class="table")
+		caption
+			input(id="buscar" type="text" class="form-control" style="width: 20%; margin-right: 2.5em; float:right" placeholder="Escriba algo para filtrar")
+		thead
+			tr
+				th Usuario
+				th Nombre
+				th Estado
+				th Fecha
+		tbody
+			each publicacion in publicaciones
+				tr
+					a(href="/publicacion/#{publicacion.id}")
+						td= publicacion._usuario.username
+						td #{publicacion._usuario.nombre+" "+publicacion._usuario.apellido}
+						td= publicacion._estado.titulo	
+						td= publicacion.fecha
+	script.
+		var busqueda = document.getElementById('buscar');
+		var table = document.getElementById("tabla").tBodies[0];
+		buscaTabla = function(){
+			texto = busqueda.value.toLowerCase();
+			var r=0;
+			while(row = table.rows[r++]){
+				if ( row.innerText.toLowerCase().indexOf(texto) !== -1 )
+					row.style.display = null;
+				else
+					row.style.display = 'none';
+				}
+		}
+		busqueda.addEventListener('keyup', buscaTabla);

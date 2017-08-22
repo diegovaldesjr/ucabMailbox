@@ -1,0 +1,35 @@
+doctype html
+html(lang="es")
+	head
+		title UCAB Mailbox
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css")
+		link(rel="stylesheet" href="css/main.css")
+		link(rel="stylesheet" href="css/animate.css")
+		link(href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css')
+		link(href='https://fonts.googleapis.com/css?family=Lato:400,700,300italic' rel='stylesheet' type='text/css')
+	body(class="fondo")
+		div(class="col-md-5 center-block quitar-float text-center espacio-arriba")
+			div(class="caja-fondo espacio-arriba animated fadeIn")
+				h1(class="mediano lato") Sign in 
+				strong #{mensaje}
+				div(class="text-left animated fadeInUp retraso-1")
+					form(method="post" action="/registro" style="margin-top:1.5em;")
+						div(class="form-group")
+							label Nombre
+							input(type="text" name="nombre" placeholder="Nombre" class="form-control")
+						div(class="form-group")
+							label Apellido
+							input(type="text" name="apellido" placeholder="Apellido" class="form-control")
+						div(class="form-group")
+							label e-mail
+							input(type="text" name="email" placeholder="e-mail" class="form-control")
+						div(class="form-group")
+							label Username
+							input(type="text" name="username" placeholder="Username" class="form-control")
+						div(class="form-group")
+							label Clave
+							input(type="password" name="password" placeholder="Contraseña" class="form-control")
+						div(class="form-group text-right")
+							input(type="submit" class="btn btn-info" value="Registrarse")

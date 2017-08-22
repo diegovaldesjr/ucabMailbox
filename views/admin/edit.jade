@@ -1,0 +1,22 @@
+extends ../layout_admin.jade
+block contenido
+    div(class="col-md-5 center-block quitar-float espacio-arriba text-left")
+        h1 Editar Estados
+        form(method="post" action="/admin/edit/#{mood.id}?_method=put" style="margin-top:1.5em;" enctype="multipart/form-data")
+            div(class="form-group")
+                label Nombre
+                input(type="text" name="titulo" placeholder="Nombre del estado" class="form-control" value="#{mood.titulo}")
+            div(class="form-group")
+                label Pregunta 1
+                input(type="text" name="p1" class="form-control" value="#{mood.preguntas.p1}")
+            div(class="form-group")
+                label Pregunta 2
+                input(type="text" name="p2" class="form-control" value="#{mood.preguntas.p2}")
+            div(class="form-group")
+                label Pregunta 3
+                input(type="text" name="p3" class="form-control" value="#{mood.preguntas.p3}")
+            div(class="form-group")
+                label Imagen
+                input(type="file" name="image")
+            div(class="form-group text-right")
+                input(type="submit" class="btn btn-info" value="Guardar")

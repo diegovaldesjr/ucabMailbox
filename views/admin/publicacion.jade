@@ -1,0 +1,16 @@
+extends ../layout_admin.jade
+block contenido
+	section(class="full-height text-center")
+		div(class="col-md-4 col-sm-4 inline-block")
+			img(src="#{publicacion.fotoURL}")
+		div(class="col-md-3 col-sm-3 inline-block")
+			p(class="mediano") #{publicacion._estado.preguntas.p1}
+			p= publicacion.respuestas.r1
+
+			p(class="mediano" style="margin-top: 2em;") #{publicacion._estado.preguntas.p2}
+			p= publicacion.respuestas.r2
+
+			p(class="mediano" style="margin-top: 2em;") #{publicacion._estado.preguntas.p3}
+			p= publicacion.respuestas.r3
+		div(class="col-md-3 col-sm-3 inline-block")
+	

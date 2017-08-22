@@ -1,0 +1,21 @@
+extends ../layout_user.jade
+block contenido
+	div(class="col-md-5 center-block quitar-float espacio-arriba text-left")
+		h1 Publicar
+		h4= estado.titulo
+		form(method="post" action="/publicar/llenar/#{usuario.id}" style="margin-top:1.5em;" enctype="multipart/form-data")
+			div(class="form-group")
+				label= estado.preguntas.p1
+				input(type="text" name="r1" class="form-control")
+			div(class="form-group")
+				label= estado.preguntas.p2
+				input(type="text" name="r2" class="form-control")
+			div(class="form-group")
+				label= estado.preguntas.p3
+				input(type="text" name="r3" class="form-control")
+			div(class="form-group")
+				label Imagen
+				input(type="file" name="foto")
+			div(class="form-group text-right")
+				input(type="submit" class="btn btn-info" value="Publicar")
+			input(type="text" name="mood" style="display: none;" value="#{estado.id}")

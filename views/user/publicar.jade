@@ -1,0 +1,12 @@
+extends ../layout_user.jade
+block contenido
+	div(class="col-md-5 center-block quitar-float espacio-arriba text-left")
+		h1 Publicar
+		form(method="post" action="/publicar/#{usuario.id}" style="margin-top:1.5em;" enctype="multipart/form-data")
+			div(class="form-group")
+				label Seleccione estado
+				select(class="form-control" name="mood")
+					each estado in estados
+						option= estado.titulo
+			div(class="form-group text-right")
+				input(type="submit" class="btn btn-info" value="Adelante")

@@ -1,0 +1,40 @@
+extends ../layout_admin.jade
+block contenido
+	h2(class="azul text-center espacio-arriba" style="margin-bottom: 1em") Panel de administracion de estados
+	table(id="tabla" class="table")
+		caption 
+			span(class="col-md-3" style="float: left") Encuestas actuales
+			input(id="buscar" type="text" class="form-control" style="width: 20%; margin-right: 2.5em; float:right" placeholder="Escriba algo para filtrar")
+		thead
+			tr
+				th #
+				th Estado
+				th Imagenes
+				th Acciones
+		tbody
+			each estado in estados
+				tr
+					td= estado.id
+					td= estado.titulo
+					td
+						a(href="#{estado.imageURL}") Ver Imagen
+					td 
+						a(href="/admin/edit/#{estado.id}") Editar
+						=" - "
+						a(href="/admin/delete/#{estado.id}") Eliminar
+	script.
+		var busqueda = document.getElementById('buscar');
+		var table = document.getElementById("tabla").tBodies[0];
+		buscaTabla = function(){
+			texto = busqueda.value.toLowerCase();
+			var r=0;
+			while(row = table.rows[r++]){
+				if ( row.innerText.toLowerCase().indexOf(texto) !== -1 )
+					row.style.display = null;
+				else
+					row.style.display = 'none';
+				}
+		}
+		busqueda.addEventListener('keyup', buscaTabla);
+	div(class="col-md-9 center-block quitar-float espacio-arriba text-right")
+		a(href="/admin/new") Agregar estado
